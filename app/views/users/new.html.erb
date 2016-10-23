@@ -1,0 +1,31 @@
+<div id="page_wrapper">
+  <%= form_for @user do |f| %>
+
+    <% if @user.errors.any? %>
+      <div id="errors">
+        <h2>There were <%= pluralize(@user.errors.count, "error") %>. User could not be created.</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= f.label :username %><br>
+      <%= f.text_field :username %><br><br>
+    </div>
+    <div>
+      <%= f.label :email %><br>
+      <%= f.email_field :email %><br><br>
+    </div>
+    <div>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br><br>
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   root "posts#index" 
 
   get '/about', to: 'pages#about'
+
+  get '/users/new', to: 'users#new'
+  post '/users', to: 'users#create'
+
+  
+
 end
 
 
