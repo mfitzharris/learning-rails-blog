@@ -1,0 +1,17 @@
+<div id="page_wrapper">
+  <h2>Log In:</h2>
+  <h3><%= @message if @message %><h3>
+  <%= form_for :session, url: sessions_path do |f|%>
+    <div>
+      <%= f.label :username %><br>
+      <%= f.text_field :username %><br><br>
+    </div>
+    <div>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br><br>
+    </div>
+    <div>
+      <%= f.submit "Log In" %>
+    </div>
+  <% end %>
+</div>

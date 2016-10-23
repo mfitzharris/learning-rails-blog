@@ -6,12 +6,14 @@ Rails.application.routes.draw do
 
   root "posts#index" 
 
-  get '/about', to: 'pages#about'
+  get '/about' => 'pages#about'
 
-  get '/users/new', to: 'users#new'
-  post '/users', to: 'users#create'
+  get '/users/new' => 'users#new'
+  post '/users' => 'users#create'
 
-  
+  get '/sessions/new' => 'sessions#new'
+  post '/sessions' => 'sessions#create'
+  delete '/sessions' => 'sessions#destroy'
 
 end
 
