@@ -2,7 +2,7 @@
 
     <% if @post.errors.any? %>
       <div id="errors">
-        <h2>There were <%= pluralize(@post.errors.count, "error") %>. Post could not be saved.</h2>
+        <h2><%= pluralize(@post.errors.count, "error") %> errors. Post could not be saved.</h2>
         <ul>
           <% @post.errors.full_messages.each do |error| %>
             <li><%= error %></li>
@@ -17,8 +17,9 @@
     </div>
     <div>
       <%= f.label :body %><br>
-      <%= f.text_area :body %>
+      <%= f.text_area :body %>    
     </div>
+
     <div>
       <%= f.submit %>
     </div>
